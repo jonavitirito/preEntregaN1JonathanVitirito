@@ -13,6 +13,7 @@ let valorDeVentanaDeAbrirSimilMadera=19147;
 let IVA=1.21;
 let cantidadDeProducto=0;
 
+
 while(opciones!=salir){
     switch(opciones){
         case 1: cotizacionDeProductos();
@@ -75,22 +76,27 @@ function puerta(){
        
     
 function puertaNegro(valorDePuertaNegro){
-    const resultado= IVA * valorDePuertaNegro*cantidadDeProducto;
-    alert("El valor del producto Puerta en color Negro Mate con IVA incluido es de $ " + resultado);
-    const resultadoSinIva= valorDePuertaNegro*cantidadDeProducto;
-    alert("El valor del producto Puerta en color Negro Mate sin IVA incluído es:$ "+resultadoSinIva);
+    let resultado= IVA * valorDePuertaNegro*cantidadDeProducto;
+    let descuentoAplicado=resultado-descuento(resultado,10);
+    if(cantidadDeProducto>=3){alert("El valor del producto Puerta en color Negro mate con descuento del 10% aplicado es:$ "+descuentoAplicado)}else{
+        alert("El valor del producto Puerta en color Negro Mate con IVA incluido es de $ " + resultado);
+    }
+    // const resultadoSinIva= valorDePuertaNegro*cantidadDeProducto;
+    // alert("El valor del producto Puerta en color Negro Mate sin IVA incluído es:$ "+resultadoSinIva);
 }
 function puertaBlanco(valorDePuertaBlanco){
     const resultado= IVA * valorDePuertaBlanco*cantidadDeProducto;
-    alert("El valor del producto Puerta en color Blanco Brillante con IVA incluido es de $ " + resultado);
-    const resultadoSinIva= valorDePuertaBlanco*cantidadDeProducto;
-    alert("El valor del producto Puerta en color Blanco Brillante sin IVA incluído es:$ "+resultadoSinIva);
+    let descuentoAplicado=resultado-descuento(resultado,10);
+    if(cantidadDeProducto>=3){alert("El valor del producto Puerta en color Blanco Brillante con descuento del 10% aplicado es:$ "+descuentoAplicado)}else{
+        alert("El valor del producto Puerta en color Blanco Brillante con IVA incluido es de $ " + resultado);
+    }
 }
 function puertaSimilMadera(valorDePuertaSimilMadera){
     const resultado= IVA * valorDePuertaSimilMadera*cantidadDeProducto;
-    alert("El valor del producto Puerta en color Simil Madera con IVA incluido es de $ " + resultado);
-    const resultadoSinIva= valorDePuertaSimilMadera*cantidadDeProducto;
-    alert("El valor del producto Puerta en color Simil Madera sin IVA incluído es:$ "+resultadoSinIva);
+    let descuentoAplicado=resultado-descuento(resultado,10);
+    if(cantidadDeProducto>=3){alert("El valor del producto Puerta en color Simil Madera con descuento del 10% aplicado es:$ "+descuentoAplicado)}else{
+        alert("El valor del producto Puerta en color Simil Madera con IVA incluido es de $ " + resultado);
+}
 }
 function ventanaCorrediza(){
     let color=parseInt(prompt("Seleccione un color de la ventana corrediza: 1-Negro Mate, 2-Blanco Brillante, 3-Simil Madera, 4-Para volver"));
@@ -111,29 +117,28 @@ function ventanaCorrediza(){
 }
 function ventanaCorredizaNegra(valorDeVentanaCorredizaNegro){
     const resultado= IVA * valorDeVentanaCorredizaNegro*cantidadDeProducto;
-    alert("El valor del producto Ventana Corrediza en color negro mate con IVA incluido es de $ " + resultado);
-    const resultadoSinIva= valorDeVentanaCorredizaNegro*cantidadDeProducto;
-    alert("El valor del producto Ventana Corrediza en color negro mate sin IVA incluído es:$ "+resultadoSinIva);
-}
+    let descuentoAplicado=resultado-descuento(resultado,10);
+    if(cantidadDeProducto>=3){alert("El valor del producto Ventana corrediza Negro Mate con descuento del 10% aplicado es:$ "+descuentoAplicado)}else{
+        alert("El valor del producto Ventana corrediza Negro Mate con IVA incluido es de $ " + resultado);
+}}
 function ventanaCorredizaBlanco(valorDeVentanaCorredizaBlanco){
     const resultado= IVA * valorDeVentanaCorredizaBlanco*cantidadDeProducto;
-    alert("El valor del producto Ventana Corrediza en color Blanco Brillante con IVA incluido es de $ " + resultado);
-    const resultadoSinIva= valorDeVentanaCorredizaBlanco*cantidadDeProducto;
-    alert("El valor del producto Ventana Corrediza en color Blanco Brillante sin IVA incluído es:$ "+resultadoSinIva);
-}
+    let descuentoAplicado=resultado-descuento(resultado,10);
+    if(cantidadDeProducto>=3){alert("El valor del producto Ventana corrediza en color Blanco Brillante con descuento del 10% aplicado es:$ "+descuentoAplicado)}else{
+        alert("El valor del producto Ventana corrediza en color Blanco Brillante con IVA incluido es de $ " + resultado);
+}}
 function ventanaCorredizaSimilMadera(valorDeVentanaCorredizaSimilMadera){
     const resultado= IVA * valorDeVentanaCorredizaSimilMadera*cantidadDeProducto;
-    alert("El valor del producto Ventana Corrediza en color Simil Madera con IVA incluido es de $ " + resultado);
-    const resultadoSinIva= valorDeVentanaCorredizaSimilMadera*cantidadDeProducto;
-    alert("El valor del producto Ventana Corrediza en color Simil Madera sin IVA incluído es:$ "+resultadoSinIva);
-}
+    let descuentoAplicado=resultado-descuento(resultado,10);
+    if(cantidadDeProducto>=3){alert("El valor del producto Ventana corrediza en color Simil Madera con descuento del 10% aplicado es:$ "+descuentoAplicado)}else{
+        alert("El valor del producto Ventana corrediza en color Simil madera con IVA incluido es de $ " + resultado);
+}}
 function ventanaDeAbrir(){
     let color=parseInt(prompt("Seleccione un color de la ventana de abrir: 1-Negro Mate, 2-Blanco Brillante, 3-Simil Madera, 4-Para volver"));
     while(color!=salir){
         switch(color){
             case 1:cantidadDeProducto=parseInt(prompt("Ingrese la cantidad de producto")); 
             ventanaDeAbrirNegro(valorDeVentanaDeAbrirNegro);
-            if(cantidadDeProducto>=3){ventanaDeAbrirNegro-descuento}
             break;
             case 2:cantidadDeProducto=parseInt(prompt("Ingrese la cantidad de producto"));
             ventanaDeAbrirBlanco(valorDeVentanaDeAbrirBlanco);
@@ -147,30 +152,33 @@ function ventanaDeAbrir(){
 }
 function ventanaDeAbrirNegro(valorDeVentanaDeAbrirNegro){
     const resultado= IVA * valorDeVentanaDeAbrirNegro*cantidadDeProducto;
-    alert("El valor del producto Ventana de abrir en color negro mate con IVA incluido es de $ " + resultado);
-    const resultadoSinIva= valorDeVentanaDeAbrirNegro*cantidadDeProducto;
-    alert("El valor del producto Ventana de abrir en color negro mate sin IVA incluído es:$ "+resultadoSinIva);
-}
+    let descuentoAplicado=resultado-descuento(resultado,10);
+    if(cantidadDeProducto>=3){alert("El valor del producto Ventana de abrir en color negro mate con descuento del 10% aplicado es:$ "+descuentoAplicado)}else{
+        alert("El valor del producto Ventana de abrir en color negro mate con IVA incluido es de $ " + resultado);
+}}
 function ventanaDeAbrirBlanco(valorDeVentanaDeAbrirBlanco){
     const resultado= IVA * valorDeVentanaDeAbrirBlanco*cantidadDeProducto;
-    alert("El valor del producto Ventana de abrir en color blanco brillante con IVA incluido es de $ " + resultado);
-    const resultadoSinIva= valorDeVentanaDeAbrirBlanco*cantidadDeProducto;
-    alert("El valor del producto Ventana de abrir en color blanco brillante sin IVA incluído es:$ "+resultadoSinIva);
-}
+    let descuentoAplicado=resultado-descuento(resultado,10);
+    if(cantidadDeProducto>=3){alert("El valor del producto Ventana de abrir en color negro mate con descuento del 10% aplicado es:$ "+descuentoAplicado)}else{
+        alert("El valor del producto Ventana de abrir en color negro mate con IVA incluido es de $ " + resultado);
+}}
 function ventanaDeAbrirSimilMadera(valorDeVentanaDeAbrirSimilMadera){
     const resultado= IVA * valorDeVentanaDeAbrirSimilMadera*cantidadDeProducto;
-    alert("El valor del producto Ventana de abrir en color simil madera con IVA incluido es de $ " + resultado);
-    const resultadoSinIva= valorDeVentanaDeAbrirSimilMadera*cantidadDeProducto;
-    alert("El valor del producto Ventana de abrir en simil madera sin IVA incluído es:$ "+resultadoSinIva);
-}
+    let descuentoAplicado=resultado-descuento(resultado,10);
+    if(cantidadDeProducto>=3){alert("El valor del producto Ventana de abrir en color Simil Madera con descuento del 10% aplicado es:$ "+descuentoAplicado)}else{
+        alert("El valor del producto Ventana de abrir en color Simil Madera con IVA incluido es de $ " + resultado);
+}}
+
 function verSucursales (){
     alert("Nuestras sucursales están en: -Lanús Este, Remedios de Escalada, calle Beron de Astrada 3361 (central) - Ruta 2 Km 38.5 Parque Industrial Pibera, lote 20.")
 }
 function verDescuentos(){
     
-    alert("le ofrecemos los siguientes descuentos: Llevando 3 unidades o más se aplicará un descuento del 10%, o si llevas 10 unidades se aplicará un descuento de hasta un 25%");
+    alert("le ofrecemos los siguientes descuentos: Llevando 3 unidades o más se aplicará un descuento del 10%");
 }
-
+function descuento(resultado, porcentaje){
+    return resultado* porcentaje / 100
+}
 
 
 
